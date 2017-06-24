@@ -3,6 +3,7 @@
 require('fpdf181/fpdf.php');
 // Cell(width, heigh, content, border(0,1), link(0:continue, 1:newline), align(L:left, C:center, R:right))
 // width used the best is 190
+// 1 page default = excel row A -> I and column 1 -> 47
 class PDF extends FPDF
 {
 // Page header
@@ -40,6 +41,7 @@ function Body($file)
     // Times 12
     $this->SetFont('Times','',12);
     // Output justified text
+    // MultiCell(width, heigh, file text,..,..,) for every row
     $this->MultiCell(0,5,$txt);
     // Line break
     $this->Ln();
@@ -73,7 +75,7 @@ $title = '20000 Leagues Under the Seas';
 $pdf->SetTitle($title);
 $pdf->AddPage();
 $pdf->SetAuthor('giathanhphat');
-$pdf->Layout(1, 'gia thanh phat', 'fpdf181/tutorial/20k_c1.txt');
+$pdf->Layout(1, 'gia thanh phat', 'fpdf181/tutorial/tuto1.htm');
 $pdf->Layout(1, 'gia thanh phat', 'fpdf181/tutorial/20k_c1.txt');
 $pdf->Layout(1, 'gia thanh phat', 'fpdf181/tutorial/20k_c1.txt');
 $pdf->Layout(1, 'gia thanh phat', 'fpdf181/tutorial/20k_c1.txt');
